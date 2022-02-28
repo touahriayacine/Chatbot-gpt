@@ -1,0 +1,91 @@
+nav {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: calc(100% - 40px);
+  padding: 20px 20px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav #logo {
+  height: 40px;
+  margin: 0;
+  padding: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 10px;
+}
+
+nav #logo #logo-img {
+  background-color: #3ba58b;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+}
+
+nav #logo #logo-name {
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+nav #logo #logo-name h4 {
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
+
+nav #links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav #links ul li {
+  font-variant: small-caps;
+  cursor: pointer;
+}
+
+nav #links ul li img {
+  height: 20px;
+  width: 20px;
+}
+
+nav #links ul .selected {
+  color: #3ba58b;
+  border-bottom: 2px solid #3ba58b;
+}
+
+nav #links ul :nth-child(7) {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/*# sourceMappingURL=nav.css.map */
