@@ -405,8 +405,9 @@ html body #main #chat-container #chats ul .me {
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
 }
 html body #main #chat-container #chats ul .me .mssg-me {
   max-width: 50%;
@@ -419,6 +420,7 @@ html body #main #chat-container #chats ul .me .mssg-me {
   width: fit-content;
   line-height: 20px;
   color: white;
+  margin-top: 5px;
 }
 html body #main #chat-container #tools {
   display: flex;

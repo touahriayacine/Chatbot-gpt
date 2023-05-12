@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Form from "../components/Form";
 import NavBar from "../components/NavBar";
 import Contact from "../components/Contact";
 import Messages from "../components/Messages";
@@ -8,8 +9,15 @@ import fileIcon from "../assets/icons/file.png";
 import sendIcon from "../assets/icons/send.png";
 
 function App() {
+  const [formVisibility, setFormVisibility] = useState(false);
+
+  const updateVisibility = () => {
+    setFormVisibility(() => !formVisibility);
+  };
+
   return (
     <div id="app-container">
+      {formVisibility && <Form updateVisibility={updateVisibility}></Form>}
       <NavBar></NavBar>
       <div id="main">
         <div id="search-bar">
@@ -18,7 +26,7 @@ function App() {
           </div>
           <input type="text" placeholder="search" />
         </div>
-        <Contact></Contact>
+        <Contact updateVisibility={updateVisibility}></Contact>
         <div id="chat-container">
           <div id="chats">
             <Messages></Messages>

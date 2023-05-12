@@ -15,17 +15,17 @@ function NavBar() {
       <div id="links">
         <ul>
           <li>home</li>
-          <li class="selected">chat</li>
+          <li className="selected">chat</li>
           <li>contacts</li>
           <li>settings</li>
           <li>faqs</li>
           <li>terms of use</li>
-          <li class="style">
+          <li className="style">
             <img src={searchIcon} alt="" />
           </li>
           <li>
             <img src={bellIcon} alt="" />
-            <div class="has-notif"></div>
+            <div className="has-notif"></div>
           </li>
         </ul>
       </div>

@@ -1,11 +1,6 @@
 import React from "react";
 
-function closeForm() {
-  //   let form_container = document.getElementById("form-container");
-  //   form_container.style = "display:none";
-}
-
-function Form() {
+function Form({ updateVisibility }) {
   return (
     <div id="form-container">
       <div id="form">
@@ -23,7 +18,7 @@ function Form() {
             ></textarea>
           </div>
           <div id="buttons">
-            <div id="cancel" onClick={closeForm()}>
+            <div id="cancel" onClick={updateVisibility}>
               Cancel
             </div>
             <input type="submit" />
