@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import default_avatar from "../assets/profiles/1.jpg";
 import plusIcon from "../assets/icons/plus.png";
 
-const create_contacts = (contacts) => {
+const create_contacts = (contacts, loadMessages) => {
   return (
     <ul>
       {contacts.map((contact) => {
         return (
-          <li className="message" key={contact.time + "_contact"}>
+          <li
+            className="message"
+            onClick={() => {
+              loadMessages(contact.messages);
+            }}
+          >
             <div className="avatar">
               <img
                 src={contact.avatar ? contact.avatar : default_avatar}
@@ -17,7 +22,14 @@ const create_contacts = (contacts) => {
             </div>
             <div className="name-lastMssg">
               <h4>{contact.name}</h4>
-              <p>{contact.last_message}</p>
+              <p>
+                {contact.messages.length > 0 &&
+                  (contact.messages[contact.messages.length - 1].role == "user"
+                    ? "you: "
+                    : "him: ")}
+                {contact.messages.length > 0 &&
+                  contact.messages[contact.messages.length - 1].content}
+              </p>
             </div>
             <div className="time">
               <h4>{contact.time}</h4>
@@ -29,22 +41,7 @@ const create_contacts = (contacts) => {
   );
 };
 
-function Contact({ updateVisibility }) {
-  const [contacts, setContacts] = useState([
-    {
-      avatar: undefined,
-      name: "Touahria Yacine",
-      last_message: "How are you?",
-      time: "09:00",
-    },
-    {
-      avatar: undefined,
-      name: "Touahria Yacine",
-      last_message: "How are you?",
-      time: "09:01",
-    },
-  ]);
-
+function Contact({ updateVisibility, contactList, loadMessages }) {
   return (
     <div id="contacts">
       <div id="add_user">
@@ -52,7 +49,7 @@ function Contact({ updateVisibility }) {
           <img src={plusIcon} alt="" />
         </button>
       </div>
-      {create_contacts(contacts)}
+      {create_contacts(contactList, loadMessages)}
     </div>
   );
 }
