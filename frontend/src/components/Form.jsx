@@ -4,6 +4,7 @@ import { useState } from "react";
 function Form({ updateVisibility, handleNewProfile }) {
   const [name, SetName] = useState("");
   const [description, setDescription] = useState("");
+  const [photo, setPhoto] = useState("");
   return (
     <div id="form-container">
       <div id="form">
@@ -17,6 +18,14 @@ function Form({ updateVisibility, handleNewProfile }) {
               placeholder="Put your name"
               value={name}
               onChange={(e) => SetName(e.target.value)}
+            />
+            <label for="name">Photo</label>
+            <input
+              type="text"
+              name="photo"
+              placeholder="Put the url of the photo"
+              value={photo}
+              onChange={(e) => setPhoto(e.target.value)}
             />
             <label for="description">Description</label>
             <textarea
@@ -35,7 +44,7 @@ function Form({ updateVisibility, handleNewProfile }) {
             <input
               type="submit"
               onClick={() => {
-                handleNewProfile(name, description);
+                handleNewProfile(name, description, photo);
                 updateVisibility();
               }}
             />

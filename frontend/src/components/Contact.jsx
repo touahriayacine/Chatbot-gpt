@@ -28,7 +28,11 @@ const create_contacts = (contacts, loadMessages) => {
                     ? "you: "
                     : "him: ")}
                 {contact.messages.length > 0 &&
-                  contact.messages[contact.messages.length - 1].content}
+                  contact.messages[contact.messages.length - 1].content.slice(
+                    0,
+                    15
+                  )}
+                ...
               </p>
             </div>
             <div className="time">

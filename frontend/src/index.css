@@ -392,6 +392,10 @@ html body #main #chat-container #chats ul .other .list-messages {
   gap: 10px;
   max-width: 50%;
 }
+html body #main #chat-container #chats ul .other .list-messages #waiting-message{
+  height: 30px;
+  mix-blend-mode: darken;
+}
 html body #main #chat-container #chats ul .other .list-messages .other-mssg {
   background-color: #f5f7fb;
   font-size: 12px;

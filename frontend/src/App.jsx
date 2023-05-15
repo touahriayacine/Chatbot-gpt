@@ -39,15 +39,15 @@ function App() {
     setFormVisibility(() => !formVisibility);
   };
 
-  const handleNewProfile = (userName, description) => {
-    const newProfile = { userName, description };
+  const handleNewProfile = (userName, description, photo) => {
+    const newProfile = { userName, description, photo };
     let profs = profiles;
     profs.push(newProfile);
     setProfiles(profs);
 
     let contList = contacts;
     contList.push({
-      avatar: undefined,
+      avatar: photo,
       name: userName,
       messages: [],
       time: "09:00",
@@ -107,7 +107,7 @@ function App() {
         ></Contact>
         <div id="chat-container">
           <div id="chats">
-            <Messages msgList={chats}></Messages>
+            <Messages msgList={chats} isTyping={isTyping}></Messages>
           </div>
           <div id="tools">
             <div id="chat-bar">

@@ -1,8 +1,9 @@
 import React from "react";
 import default_avatar from "../assets/profiles/1.jpg";
+import animation from "../assets/icons/waiting-message.gif";
 
-const create_messages = (messages) => {
-  return messages.map((message) => {
+const create_messages = (messages, isTyping) => {
+  let containers = messages.map((message) => {
     if (message.role === "user") {
       return (
         <li className="me" key={"me"}>
@@ -29,10 +30,22 @@ const create_messages = (messages) => {
       );
     }
   });
+  if (isTyping) {
+    containers.push(
+      <li className="other" key={"other"}>
+        <div className="list-messages">
+          <div className="other-mssg" key={"other"}>
+            <img src={animation} alt="" id="waiting-message" />
+          </div>
+        </div>
+      </li>
+    );
+  }
+  return containers;
 };
 
-function Messages({ msgList }) {
-  return <ul>{msgList.length > 0 && create_messages(msgList)}</ul>;
+function Messages({ msgList, isTyping }) {
+  return <ul>{msgList.length > 0 && create_messages(msgList, isTyping)}</ul>;
 }
 
 export default Messages;
