@@ -11,27 +11,8 @@ import sendIcon from "./assets/icons/send.png";
 function App() {
   const [formVisibility, setFormVisibility] = useState(false);
   const [message, setMessage] = useState("");
-  const [contacts, setContacts] = useState([
-    {
-      avatar: undefined,
-      name: "Touahria Yacine",
-      messages: [
-        { role: "user", content: "Hello" },
-        { role: "bot", content: "How are you?" },
-      ],
-      time: "09:00",
-    },
-    {
-      avatar: undefined,
-      name: "Touahria Yacine",
-      messages: [
-        { role: "bot", content: "Yo" },
-        { role: "user", content: "Wsup man?" },
-      ],
-      time: "09:01",
-    },
-  ]);
-  const [chats, setChats] = useState(contacts[0].messages);
+  const [contacts, setContacts] = useState([]);
+  const [chats, setChats] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const [profiles, setProfiles] = useState([]);
 

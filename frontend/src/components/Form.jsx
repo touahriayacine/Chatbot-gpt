@@ -19,14 +19,17 @@ function Form({ updateVisibility, handleNewProfile }) {
               value={name}
               onChange={(e) => SetName(e.target.value)}
             />
-            <label for="name">Photo</label>
+            {/* <label for="name" className="hidden">
+              Photo
+            </label>
             <input
+              className="hidden"
               type="text"
               name="photo"
               placeholder="Put the url of the photo"
               value={photo}
               onChange={(e) => setPhoto(e.target.value)}
-            />
+            /> */}
             <label for="description">Description</label>
             <textarea
               name="description"
@@ -44,7 +47,7 @@ function Form({ updateVisibility, handleNewProfile }) {
             <input
               type="submit"
               onClick={() => {
-                handleNewProfile(name, description, photo);
+                handleNewProfile(name, description, undefined);
                 updateVisibility();
               }}
             />

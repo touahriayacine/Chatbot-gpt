@@ -18,7 +18,11 @@ const create_messages = (messages, isTyping) => {
       return (
         <li className="other" key={"other"}>
           <div className="other-avatar">
-            <img src={message.profile ? message.profile : default_avatar} />
+            <img
+              src={
+                message.profile !== undefined ? message.profile : default_avatar
+              }
+            />
             {/* message.time */}
           </div>
           <div className="list-messages">
